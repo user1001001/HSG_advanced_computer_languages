@@ -10,7 +10,7 @@ Basil Gemperle (15-612-096)
 
 The goal of the class I have create is to collect information about a certain stock from different sources. Thereby it is possible to retrieve different time series data, fundamentals, and news in regard to the title.
 
-NOte: the compact version of the code is in the python code file, whereas in the jupyter file is a version with a some examples of the methodes and attributes of the class.
+Note: the compact version of the code is in the python code file, whereas in the jupyter file is a version with a some examples of the methodes and attributes of the class.
 
 ## Required Packages
 
