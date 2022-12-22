@@ -275,5 +275,5 @@ class asset_info_collector:
 
 ## References
 
-[marketnews](https://marketnews.com/)
+[marketnews](https://marketnews.com/) "\n"
 [alphavantage](https://www.alphavantage.co/)
