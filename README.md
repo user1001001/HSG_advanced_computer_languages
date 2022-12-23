@@ -33,7 +33,7 @@ class asset_info_collector:
   Class to collect information about an asset via Api and web scraping
   """
 
-  def __init__(self, symbol='IBM', api='demo'):
+  def __init__(self, symbol, api='demo'):
     """
     Initialize the main Attributes of the class
     """
