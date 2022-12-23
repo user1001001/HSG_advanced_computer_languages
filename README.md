@@ -33,7 +33,7 @@ class asset_info_collector:
   Class to collect information about an asset via Api and web scraping
   """
 
-  def __init__(self, symbol, api='demo'):
+  def __init__(self, symbol, api='demo'):  #Input: both strings for symbol and api
     """
     Initialize the main Attributes of the class
     """
@@ -50,7 +50,7 @@ class asset_info_collector:
       self.time_series['Close'].iloc[::-1].shift(1)) #Calculate and store the log return
 
   @staticmethod
-  def fetch_symbol_list(api='demo'):  #Schauen ob namen und co enthalten!
+  def fetch_symbol_list(api='demo'):  #Schauen ob namen enthalten!; Input: string for api
     """
     Download of a example symbol list via API (callable without an object)
     """
@@ -69,7 +69,7 @@ class asset_info_collector:
     return self._symbol
 
   @symbol.setter #Function if corresponding attribute is set
-  def symbol(self, val): 
+  def symbol(self, val): #Input: string for symbol
     if val not in self.symbol_list['symbol'].values: #Check if entered symbol is supported
       raise ValueError(
         'Please enter a valid symbol or take a look at the symbol list (asset_info_collector..fetch_symbol_list())'
@@ -109,7 +109,7 @@ class asset_info_collector:
     data = r.json() #Read/decode data
     self.overview = pd.DataFrame(data, index=['Data']).T #Store data in Dataframe 
 
-  def income_statement(self, annual=False):
+  def income_statement(self, annual=False): #Input: boolean for annual
     """
     Download of the corresponding income statement for the given symbol from Alpha Vantage
     """
@@ -123,7 +123,7 @@ class asset_info_collector:
     else:
       return quarterly_reports
 
-  def balace_sheet(self, annual=False):
+  def balace_sheet(self, annual=False): #Input: boolean for annual
     """
     Download of the corresponding balance sheet for the given symbol from Alpha Vantage
     """
@@ -137,7 +137,7 @@ class asset_info_collector:
     else:
       return quarterly_reports
 
-  def cashflow(self, annual=False):
+  def cashflow(self, annual=False): #Input: boolean for annual
     """
     Download of the corresponding cashflow for the given symbol from Alpha Vantage
     """
@@ -151,7 +151,7 @@ class asset_info_collector:
     else:
       return quarterly_reports
 
-  def earnings(self, annual=False):
+  def earnings(self, annual=False): #Input: boolean for annual
     """
     Download of the corresponding earnings for the given symbol from Alpha Vantage
     """
@@ -165,7 +165,7 @@ class asset_info_collector:
     else:
       return quarterly_earnings
 
-  def current_news(self, key_val=None):
+  def current_news(self, key_val=None): #Input: string for key_val
     """
     Function to get a list of links from marketnews for a given key word
     Default: it is searching for the symbol of the Stock or the name of the company
@@ -239,7 +239,7 @@ class asset_info_collector:
     plt.ylabel('Volume') #Set y-label
     plt.show()
 
-  def save(self, form='excel', name=None, path=''):
+  def save(self, form='excel', name=None, path=''): #Input: Three strings for form, name, and path
     """
     Function to export the time series table to an excel or csv file
     """
