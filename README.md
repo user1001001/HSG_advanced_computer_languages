@@ -50,7 +50,7 @@ class asset_info_collector:
       self.time_series['Close'].iloc[::-1].shift(1)) #Calculate and store the log return
 
   @staticmethod
-  def fetch_symbol_list(api='demo'):  #Schauen ob namen enthalten!; Input: string for api
+  def fetch_symbol_list(api='demo'):  #See if names is preset! Input: string for api
     """
     Download of a example symbol list via API (callable without an object)
     """
